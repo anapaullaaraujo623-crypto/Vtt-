@@ -140,7 +140,14 @@
     if (!action) return;
     event.preventDefault();
     closeMenu(false);
-    const labels = { guias: "A área de Guias será construída em seguida.", comunidade: "A área da Comunidade será construída em seguida.", configuracoes: "As Configurações serão abertas aqui em uma próxima etapa." };
+    const labels = {
+      recursos: "A área de Recursos será conectada aqui.",
+      guias: "A área de Guias será construída em seguida.",
+      compendios: "A área de Compêndios será construída em seguida.",
+      comunidade: "A área da Comunidade será construída em seguida.",
+      sobre: "A área Sobre reunirá o projeto, seus princípios e acessibilidade.",
+      configuracoes: "As Configurações serão abertas aqui em uma próxima etapa."
+    };
     setStatus(userStatus, labels[action] || "");
   });
 
