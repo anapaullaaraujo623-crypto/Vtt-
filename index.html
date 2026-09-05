@@ -12,103 +12,54 @@
 .hero{padding:5rem 0;text-align:center}.hero h1{font-size:clamp(2.5rem,9vw,5rem);line-height:1;margin:0}.hero p{max-width:48rem;margin:1.25rem auto;color:var(--muted);font-size:1.2rem}.button{display:inline-block;background:var(--red);color:#fff;padding:.8rem 1rem;border-radius:.7rem;text-decoration:none;font-weight:800;border:1px solid transparent;cursor:pointer}.button:hover{background:var(--red2)}.button.secondary{background:transparent;border-color:var(--border)}.button.secondary:hover{background:rgba(255,255,255,.07)}.button.ghost{background:transparent;color:var(--text);padding:.55rem .75rem;border-color:transparent}.button:disabled{opacity:.55;cursor:not-allowed}
 .section{padding:3rem 0;border-top:1px solid rgba(255,255,255,.12)}h2{text-align:center;font-size:2rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:1rem}.card{background:linear-gradient(180deg,rgba(48,20,65,.95),rgba(31,13,43,.96));border:1px solid var(--border);border-radius:.9rem;padding:1.2rem}.card p{color:var(--muted)}
 .auth{max-width:42rem;margin:auto}.auth form{display:grid;gap:.8rem}.auth label{font-weight:800}.auth input{width:100%;padding:.8rem;border-radius:.65rem;border:1px solid var(--border);background:#110718;color:var(--text)}.status{min-height:1.5rem;font-weight:700}.status[data-kind="success"]{color:var(--success)}.status[data-kind="error"]{color:var(--danger)}
-.dashboard{padding:2rem 0 4rem}.dashboard-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}.dashboard-title h1{margin:0;font-size:clamp(2rem,7vw,3.4rem);line-height:1.05}.dashboard-title p{margin:.55rem 0 0;color:var(--muted)}.dashboard-actions{display:flex;gap:.5rem;flex-wrap:wrap}
+.dashboard{padding:2rem 0 4rem}.dashboard-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}.dashboard-title h1{margin:0;font-size:clamp(2rem,7vw,3.4rem);line-height:1.05}.dashboard-title p{margin:.55rem 0 0;color:var(--muted)}.dashboard-actions{display:flex;gap:.5rem;flex-wrap:wrap;align-items:flex-start}.menu-wrap{position:relative}.menu-panel{position:absolute;right:0;top:calc(100% + .5rem);z-index:20;min-width:14rem;background:#1c0d28;border:1px solid var(--border);border-radius:.8rem;padding:.45rem;box-shadow:0 1rem 2.5rem rgba(0,0,0,.45)}.menu-panel ul{list-style:none;margin:0;padding:0}.menu-panel a,.menu-panel button{display:block;width:100%;text-align:left;background:transparent;color:var(--text);border:0;border-radius:.55rem;padding:.72rem .8rem;text-decoration:none;cursor:pointer}.menu-panel a:hover,.menu-panel button:hover{background:rgba(255,255,255,.08)}
 .dashboard-hero{background:linear-gradient(135deg,rgba(77,31,105,.95),rgba(38,15,53,.98));border:1px solid var(--border);border-radius:1rem;padding:clamp(1.2rem,4vw,2rem);margin-bottom:1.4rem}.dashboard-hero h2{text-align:left;margin:0 0 .4rem;font-size:1.5rem}.dashboard-hero p{margin:.2rem 0;color:var(--muted)}
 .mesas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:1rem}.mesa-card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--border);border-radius:1rem;padding:1.2rem;display:grid;gap:.75rem}.mesa-card h3{margin:0;font-size:1.25rem}.mesa-card p{margin:0;color:var(--muted)}.mesa-meta{font-size:.92rem}.empty-state{grid-column:1/-1;text-align:center;padding:2.2rem 1.2rem}.empty-state h3{margin-top:0}.empty-state p{max-width:34rem;margin:.5rem auto 1rem;color:var(--muted)}
 .account-panel{margin-top:1.4rem;background:rgba(0,0,0,.16);border:1px solid var(--border);border-radius:.9rem;padding:1rem}.account-panel h2{text-align:left;margin-top:0;font-size:1.25rem}.account-panel p{color:var(--muted)}.account-panel .button{margin-top:.4rem}
 footer{padding:2rem 0;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,.12)}
-@media(max-width:44rem){.dashboard-actions{width:100%}.dashboard-actions .button{flex:1 1 auto;text-align:center}}
+@media(max-width:44rem){.dashboard-actions{width:100%}.dashboard-actions>.button,.menu-wrap{flex:1 1 auto}.menu-wrap>.button{width:100%}.menu-panel{right:0;left:auto;min-width:min(18rem,calc(100vw - 2rem))}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo principal</a>
-
 <div id="public-shell">
 <header class="site-header">
 <a class="brand" href="#inicio">VTT Acessível</a>
 <nav aria-label="Navegação principal"><ul><li><a href="#recursos">Recursos</a></li><li><a href="#acesso">Acesso</a></li></ul></nav>
 </header>
 <main id="conteudo">
-<section class="hero" id="inicio">
-<h1>Sua mesa. Seu jeito de jogar.</h1>
-<p>Uma mesa virtual para RPG pensada desde a base para diferentes formas de perceber, navegar e participar.</p>
-<a class="button" href="#acesso">Entrar na plataforma</a>
-</section>
-
-<section class="section" id="recursos">
-<h2>Recursos</h2>
-<div class="grid">
-<article class="card"><h3>Mesa virtual</h3><p>Mapas, cenas, tokens, medição e ferramentas compartilhadas.</p></article>
-<article class="card"><h3>Jogo acessível</h3><p>Estrutura semântica, teclado, leitor de tela, contraste e alternativas às interações exclusivamente visuais.</p></article>
-<article class="card"><h3>Campanhas organizadas</h3><p>Diário, arquivos, criaturas, NPCs, rolagens e conteúdo da mesa no mesmo lugar.</p></article>
-</div>
-</section>
-
-<section class="section">
-<h2>Compêndios e comunidade</h2>
-<div class="grid">
-<article class="card"><h3>Ordem Paranormal</h3><p>Primeiro sistema em desenvolvimento e laboratório inicial da plataforma.</p></article>
-<article class="card"><h3>Conteúdo da comunidade</h3><p>Um espaço único para descobrir e futuramente publicar mapas, aventuras, tabelas e outros materiais compatíveis.</p></article>
-</div>
-</section>
-
-<section class="section">
-<h2>Sobre</h2>
-<div class="card"><p>Uma boa ferramenta de RPG deve desaparecer quando a cena começa. Um mapa pode ter várias formas de ser percebido e operado, mantendo a camada visual e a camada semântica sincronizadas.</p></div>
-</section>
-
-<section class="section" id="acesso" aria-labelledby="titulo-acesso">
-<h2 id="titulo-acesso">Acesso</h2>
-<div class="card auth">
-<div id="auth-guest">
-<p>Digite seu e-mail. Se você ainda não tiver conta, ela será criada automaticamente. Você receberá um link de acesso por e-mail.</p>
-<form id="magic-form">
-<div>
-<label for="magic-email">E-mail</label>
-<input id="magic-email" name="email" type="email" autocomplete="email" required>
-</div>
-<button class="button" type="submit">Enviar link de acesso</button>
-</form>
-</div>
-<p id="auth-status" class="status" role="status" aria-live="polite"></p>
-</div>
-</section>
+<section class="hero" id="inicio"><h1>Sua mesa. Seu jeito de jogar.</h1><p>Uma mesa virtual para RPG pensada desde a base para diferentes formas de perceber, navegar e participar.</p><a class="button" href="#acesso">Entrar na plataforma</a></section>
+<section class="section" id="recursos"><h2>Recursos</h2><div class="grid"><article class="card"><h3>Mesa virtual</h3><p>Mapas, cenas, tokens, medição e ferramentas compartilhadas.</p></article><article class="card"><h3>Jogo acessível</h3><p>Estrutura semântica, teclado, leitor de tela, contraste e alternativas às interações exclusivamente visuais.</p></article><article class="card"><h3>Campanhas organizadas</h3><p>Diário, arquivos, criaturas, NPCs, rolagens e conteúdo da mesa no mesmo lugar.</p></article></div></section>
+<section class="section"><h2>Compêndios e comunidade</h2><div class="grid"><article class="card"><h3>Ordem Paranormal</h3><p>Primeiro sistema em desenvolvimento e laboratório inicial da plataforma.</p></article><article class="card"><h3>Conteúdo da comunidade</h3><p>Um espaço único para descobrir e futuramente publicar mapas, aventuras, tabelas e outros materiais compatíveis.</p></article></div></section>
+<section class="section"><h2>Sobre</h2><div class="card"><p>Uma boa ferramenta de RPG deve desaparecer quando a cena começa. Um mapa pode ter várias formas de ser percebido e operado, mantendo a camada visual e a camada semântica sincronizadas.</p></div></section>
+<section class="section" id="acesso" aria-labelledby="titulo-acesso"><h2 id="titulo-acesso">Acesso</h2><div class="card auth"><div id="auth-guest"><p>Digite seu e-mail. Se você ainda não tiver conta, ela será criada automaticamente. Você receberá um link de acesso por e-mail.</p><form id="magic-form"><div><label for="magic-email">E-mail</label><input id="magic-email" name="email" type="email" autocomplete="email" required></div><button class="button" type="submit">Enviar link de acesso</button></form></div><p id="auth-status" class="status" role="status" aria-live="polite"></p></div></section>
 </main>
 <footer>VTT Acessível. Projeto em desenvolvimento.</footer>
 </div>
 
 <main id="dashboard-shell" class="dashboard" hidden aria-labelledby="dashboard-title">
 <div class="dashboard-top">
-<div class="dashboard-title">
-<p class="muted">VTT Acessível</p>
-<h1 id="dashboard-title">Minhas Mesas</h1>
-<p id="welcome-text">Suas campanhas ficam reunidas aqui.</p>
-</div>
+<div class="dashboard-title"><p class="muted">VTT Acessível</p><h1 id="dashboard-title">Minhas Mesas</h1><p id="welcome-text">Suas campanhas ficam reunidas aqui.</p></div>
 <div class="dashboard-actions">
 <button id="create-table" class="button" type="button">Criar mesa</button>
+<div class="menu-wrap">
+<button id="menu-toggle" class="button secondary" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+<nav id="site-menu" class="menu-panel" aria-label="Menu da plataforma" hidden>
+<ul>
+<li><a href="#guias" data-menu-action="guias">Guias</a></li>
+<li><a href="#comunidade" data-menu-action="comunidade">Comunidade</a></li>
+<li><button type="button" data-menu-action="configuracoes">Configurações</button></li>
+</ul>
+</nav>
+</div>
 <button id="account-toggle" class="button secondary" type="button" aria-expanded="false" aria-controls="account-panel">Minha conta</button>
 </div>
 </div>
 
-<section class="dashboard-hero" aria-labelledby="continue-title">
-<h2 id="continue-title">Escolha uma mesa para continuar</h2>
-<p>Entre em uma campanha existente ou crie uma nova para começar.</p>
-</section>
-
-<section aria-labelledby="tables-title">
-<h2 id="tables-title" class="skip-heading" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">Lista de mesas</h2>
-<div id="mesas-grid" class="mesas-grid" aria-live="polite">
-<div class="empty-state card"><p>Carregando suas mesas...</p></div>
-</div>
-</section>
-
-<section id="account-panel" class="account-panel" hidden aria-labelledby="account-title">
-<h2 id="account-title">Minha conta</h2>
-<p id="account-text"></p>
-<button id="logout" class="button secondary" type="button">Sair da conta</button>
-<p id="user-status" class="status" role="status" aria-live="polite"></p>
-</section>
+<section class="dashboard-hero" aria-labelledby="continue-title"><h2 id="continue-title">Escolha uma mesa para continuar</h2><p>Entre em uma campanha existente ou crie uma nova para começar.</p></section>
+<section aria-labelledby="tables-title"><h2 id="tables-title" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">Lista de mesas</h2><div id="mesas-grid" class="mesas-grid" aria-live="polite"><div class="empty-state card"><p>Carregando suas mesas...</p></div></div></section>
+<section id="account-panel" class="account-panel" hidden aria-labelledby="account-title"><h2 id="account-title">Minha conta</h2><p id="account-text"></p><button id="logout" class="button secondary" type="button">Sair da conta</button><p id="user-status" class="status" role="status" aria-live="polite"></p></section>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.115.0"></script>
